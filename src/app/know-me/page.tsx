@@ -8,9 +8,9 @@ import Scanning from "./alerts/scanning";
 import Fooled from "./alerts/fooled";
 import Sidebar from "./components/sidebar";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 
-export default function Know(){
+function KnowContent() {
     const searchParams = useSearchParams();
     const [step, setstep] = useState(0);
     const [hasCheckedVisit, setHasCheckedVisit] = useState(false);
@@ -43,5 +43,13 @@ export default function Know(){
                 </div>
             )}
         </main>
+    );
+}
+
+export default function Know(){
+    return (
+        <Suspense fallback={null}>
+            <KnowContent />
+        </Suspense>
     );
 }
