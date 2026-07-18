@@ -24,3 +24,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.outlined-text{
+  color: black;
+  -webkit-text-stroke: 1px rgb(219, 247, 10);
+}
+
+.card-image {
+  animation: kenburns 22s ease-in-out infinite alternate;
+  transform-origin: 60% 40%;
+  transition: filter 0.7s ease;
+}
